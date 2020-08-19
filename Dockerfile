@@ -70,7 +70,7 @@ RUN     cp $HOME/bootstrap.jl $JULIA_PKGDIR/packages/Fezzik/SfTjP/src/ && \
 USER $NB_UID
 
 RUN echo 'using Fezzik; Fezzik.trace();' >> ${JULIA_DEPOT_PATH}-${JULIA_VERSION}/etc/julia/startup.jl && \
-    jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 "Data Inversion Tutotrial.ipynb" --stdout >/dev/null && \
+    jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 "Data Inversion Tutorial.ipynb" --stdout >/dev/null && \
     
 RUN julia -e 'using Fezzik; Fezzik.brute_build_julia(;clear_traces = true);'  
 
