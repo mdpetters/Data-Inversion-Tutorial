@@ -592,6 +592,12 @@ git-tree-sha1 = "0c6a63d16e9261bf2fa4eecbab575ae7e7fef11c"
 uuid = "30363a11-5582-574a-97bb-aa9a979735b9"
 version = "0.10.2"
 
+[[NumericIO]]
+deps = ["Printf", "Test"]
+git-tree-sha1 = "0cb5fb8157780c06a36b1c7ccaab4fcebed83259"
+uuid = "6c575b1c-77cb-5640-a5dc-a54116c90507"
+version = "0.3.1"
+
 [[Observables]]
 git-tree-sha1 = "11832878355305984235a2e90d0e3737383c634c"
 uuid = "510215fc-4207-5dde-b226-833fc4488ee2"
