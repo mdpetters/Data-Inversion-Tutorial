@@ -37,7 +37,7 @@ RUN mkdir /etc/julia && \
 USER $NB_UID
 
  # Download notebooks
-RUN git clone https://github.ncsu.edu/mdpetter/Data-Inversion-Tutorial.git  && \
+RUN git clone  https://github.com/mdpetters/Data-Inversion-Tutorial.git && \
         cp -r $HOME/Data-Inversion-Tutorial/*.* . && \
         cp -r $HOME/Data-Inversion-Tutorial/* . &&  \
         rm -rf $HOME/work && \
