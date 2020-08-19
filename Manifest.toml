@@ -123,6 +123,11 @@ git-tree-sha1 = "25f750df2893991f2c9b18425bfac6f2ce855154"
 uuid = "a9693cdc-2bc8-5703-a9cd-1da358117377"
 version = "0.2.0"
 
+[[ConstructionBase]]
+git-tree-sha1 = "a2a6a5fea4d6f730ec4c18a76d27ec10e8ec1c50"
+uuid = "187b0558-2788-49d3-abe0-74a17ed4e7c9"
+version = "1.0.0"
+
 [[Contour]]
 deps = ["StaticArrays"]
 git-tree-sha1 = "81685fee51fc5168898e3cbd8b0f01506cd9148e"
@@ -235,6 +240,14 @@ deps = ["Libdl", "Pkg"]
 git-tree-sha1 = "6c975cd606128d45d1df432fb812d6eb10fee00b"
 uuid = "f5851436-0d7a-5f13-b9de-f02708fd171a"
 version = "3.3.9+5"
+
+[[Fezzik]]
+deps = ["Libdl", "PackageCompiler", "Pkg", "Setfield"]
+git-tree-sha1 = "df5ba9b43d13e1f3d41539bd1bc20c11372be9f9"
+repo-rev = "master"
+repo-url = "https://github.com/TsurHerman/Fezzik"
+uuid = "5c3170aa-382f-11e9-07a5-b732e1ee027c"
+version = "0.5.0"
 
 [[FileIO]]
 deps = ["Pkg"]
@@ -624,6 +637,12 @@ git-tree-sha1 = "b3405086eb6a974eba1958923d46bc0e1c2d2d63"
 uuid = "90014a1f-27ba-587c-ab20-58faa44d9150"
 version = "0.10.0"
 
+[[PackageCompiler]]
+deps = ["Libdl", "Pkg", "UUIDs"]
+git-tree-sha1 = "98aa9c653e1dc3473bb5050caf8501293db9eee1"
+uuid = "9b87118b-4619-50d2-8e1e-99f35a4d4d9d"
+version = "1.2.1"
+
 [[Pango_jll]]
 deps = ["Cairo_jll", "Fontconfig_jll", "FreeType2_jll", "FriBidi_jll", "Glib_jll", "HarfBuzz_jll", "Libdl", "Pkg"]
 git-tree-sha1 = "cd19789f20bde5d45e96a7e937db9a6a024412e6"
@@ -744,6 +763,12 @@ version = "1.2.11"
 
 [[Serialization]]
 uuid = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
+
+[[Setfield]]
+deps = ["ConstructionBase", "Future", "MacroTools", "Requires"]
+git-tree-sha1 = "d5640fc570fb1b6c54512f0bd3853866bd298b3e"
+uuid = "efcf1570-3423-57d1-acb7-fd33fddbac46"
+version = "0.7.0"
 
 [[SharedArrays]]
 deps = ["Distributed", "Mmap", "Random", "Serialization"]
