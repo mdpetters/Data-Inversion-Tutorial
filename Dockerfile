@@ -79,3 +79,5 @@ RUN echo 'using Fezzik; Fezzik.trace();' >> ${JULIA_DEPOT_PATH}-${JULIA_VERSION}
     jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 "Session 5 - Summary and Perspective.ipynb" --stdout >/dev/null 
     
 RUN julia -e 'using Fezzik; Fezzik.brute_build_julia(;clear_traces = true);'  
+
+RUN julia -e 'import Pkg; Pkg.add("https://github.com/JuliaComputing/MKL.jl")
