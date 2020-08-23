@@ -64,9 +64,9 @@ RUN julia -e 'using WebIO; WebIO.install_jupyter_nbextension();'
 # Copy libraries for Fezzik precompile to succeed
 USER root
 
-RUN	chmod a+w ${JULIA_DEPOT_PATH}-${JULIA_VERSION}/lib/julia/ && \
+RUN	cp $HOME/bootstrap.jl $JULIA_PKGDIR/packages/Fezzik/SfTjP/src/ && \
+	chmod a+w ${JULIA_DEPOT_PATH}-${JULIA_VERSION}/lib/julia/ && \
     chmod a+w ${JULIA_DEPOT_PATH}-${JULIA_VERSION}/etc/julia/startup.jl 
-# cp $HOME/bootstrap.jl $JULIA_PKGDIR/packages/Fezzik/SfTjP/src/ && \
 
 
 USER $NB_UID
@@ -79,5 +79,3 @@ RUN echo 'using Fezzik; Fezzik.trace();' >> ${JULIA_DEPOT_PATH}-${JULIA_VERSION}
     jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 "Session 5 - Summary and Perspective.ipynb" --stdout >/dev/null 
     
 RUN julia -e 'using Fezzik; Fezzik.brute_build_julia(;clear_traces = true);'  
-
-RUN julia -e 'import Pkg; Pkg.add(Pkg.PackageSpec(url="https://github.com/JuliaComputing/MKL.jl"))'
