@@ -92,7 +92,7 @@ function noise_app(Qcpc, N, Bins)
     xlabels = log10.([10, 20, 50, 100, 200, 500])
     colors = ["black", "darkred"]
     
-    set_default_plot_size(25cm, 8cm)
+    #set_default_plot_size(25Gadfly.cm, 8Gadfly.cm)
     p1 = plot(
         df3,
         x = :Dp,
@@ -122,6 +122,7 @@ function noise_app(Qcpc, N, Bins)
         Scale.color_discrete_manual(colors...),
         Coord.cartesian(xmin = log10(10), xmax = log10(500)),
     )
+	set_default_plot_size(24Gadfly.cm, 8Gadfly.cm)
     return hstack(p1,p2)
 end
 

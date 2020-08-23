@@ -41,7 +41,7 @@ function regularization_app1(λ)
     xlabels = log10.([10, 20, 50, 100, 200, 500])
     colors = ["black", "darkred"]
     
-    set_default_plot_size(28cm, 8cm)
+    set_default_plot_size(28Gadfly.cm, 8Gadfly.cm)
     p1 = plot(
         df,
         x = :Dp,

@@ -195,8 +195,8 @@ uuid = "b552c78f-8df3-52c6-915a-8e097449b14b"
 version = "1.0.1"
 
 [[DifferentialMobilityAnalyzers]]
-deps = ["Calculus", "DataFrames", "Distributions", "Glob", "IJulia", "Interpolations", "LambertW", "LinearAlgebra", "LsqFit", "NetCDF", "Printf", "ProgressMeter", "Random", "SpecialFunctions", "StatsBase", "Test"]
-git-tree-sha1 = "e32e4df9fba703098adbcf889220fec75825d4c2"
+deps = ["Calculus", "DataFrames", "DataStructures", "Distributions", "Glob", "IJulia", "Interpolations", "LambertW", "LinearAlgebra", "LsqFit", "NetCDF", "Printf", "ProgressMeter", "Random", "SpecialFunctions", "StatsBase", "Test"]
+git-tree-sha1 = "b9e04ae7ee187dbd6c684dc3d2aecd2687b0c0dc"
 repo-rev = "master"
 repo-url = "https://github.com/mdpetters/DifferentialMobilityAnalyzers.jl.git"
 uuid = "050a7be8-18f9-52d6-bdba-0a194485d082"
@@ -557,11 +557,24 @@ git-tree-sha1 = "b32b5549461fcb93bce223e264d4a7ef0c9923fd"
 uuid = "2fda8390-95c7-5789-9bda-21331edee243"
 version = "0.11.0"
 
+[[MKL]]
+deps = ["Libdl", "MKL_jll", "PackageCompiler"]
+git-tree-sha1 = "ffb6d5ad4be59e6201f9a6d0999ec1688fda533c"
+repo-rev = "master"
+repo-url = "https://github.com/JuliaComputing/MKL.jl"
+uuid = "33e6dc65-8f57-5167-99aa-e5a354878fb2"
+version = "0.2.0"
+
 [[MKL_jll]]
 deps = ["IntelOpenMP_jll", "Libdl", "Pkg"]
 git-tree-sha1 = "eb540ede3aabb8284cb482aa41d00d6ca850b1f8"
 uuid = "856f044c-d86e-5d09-b602-aeab76dc8ba7"
 version = "2020.2.254+0"
+
+[[MLStyle]]
+git-tree-sha1 = "937eda9ce36fcce082a42edd7181c8d23f4eb550"
+uuid = "d8e11817-5142-5d16-987a-aa16d5891078"
+version = "0.4.6"
 
 [[MacroTools]]
 deps = ["Markdown", "Random"]

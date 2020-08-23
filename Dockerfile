@@ -70,8 +70,10 @@ RUN     cp $HOME/bootstrap.jl $JULIA_PKGDIR/packages/Fezzik/SfTjP/src/ && \
 USER $NB_UID
 
 RUN echo 'using Fezzik; Fezzik.trace();' >> ${JULIA_DEPOT_PATH}-${JULIA_VERSION}/etc/julia/startup.jl && \
-    jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 "Data Inversion Tutorial.ipynb" --stdout >/dev/null 
+    jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 "Session 1 - Introduction.ipynb" --stdout >/dev/null && \ 
+    jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 "Session 2 - The Forward Model.ipynb" --stdout >/dev/null && \ 
+    jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 "Session 3 - Tikhonov Regularization.ipynb" --stdout >/dev/null && \ 
+    jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 "Session 4 - Hands on Examples.ipynb" --stdout >/dev/null && \ 
+    jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 "Session 5 - Summary and Perspective.ipynb" --stdout >/dev/null 
     
 RUN julia -e 'using Fezzik; Fezzik.brute_build_julia(;clear_traces = true);'  
-
-
