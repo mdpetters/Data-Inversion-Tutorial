@@ -32,6 +32,7 @@ RUN mkdir /etc/julia && \
     echo "push!(Libdl.DL_LOAD_PATH, \"$CONDA_DIR/lib\")" >> /etc/julia/juliarc.jl && \
     mkdir $JULIA_PKGDIR && \
     chown $NB_USER $JULIA_PKGDIR && \
+    chown $NB_USER  /opt/julia-${JULIA_VERSION} && \
     fix-permissions $JULIA_PKGDIR /opt/julia-${JULIA_VERSION}
 
 USER $NB_UID
