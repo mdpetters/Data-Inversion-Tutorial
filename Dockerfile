@@ -64,10 +64,9 @@ RUN julia -e 'using WebIO; WebIO.install_jupyter_nbextension();'
 # Copy libraries for Fezzik precompile to succeed
 USER root
 
-RUN chmod a+w ${JULIA_DEPOT_PATH}-${JULIA_VERSION}/lib/julia/ && \
+RUN cp $HOME/bootstrap.jl $JULIA_PKGDIR/packages/Fezzik/SfTjP/src/ && \
+	chmod a+w ${JULIA_DEPOT_PATH}-${JULIA_VERSION}/lib/julia/ && \
     chmod a+w ${JULIA_DEPOT_PATH}-${JULIA_VERSION}/etc/julia/startup.jl 
-
-# cp $HOME/bootstrap.jl $JULIA_PKGDIR/packages/Fezzik/SfTjP/src/ && \
 
 
 USER $NB_UID

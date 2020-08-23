@@ -174,7 +174,7 @@ end
 
 
 compile_incremental(file) = begin
-    PackageCompiler.create_sysimage(precompile_execution_file = file , replace_default = true; cpu_target="generic")
+    PackageCompiler.create_sysimage(precompile_execution_file = file , replace_default = true; cpu_target="x86_64")
 end
 
 function PackageCompiler.create_sysimg_object_file(object_file::String, packages::Vector{String};
