@@ -37,7 +37,7 @@ function getplots2(T, 𝕟, 𝕩)
         Scale.color_discrete_manual(colors...),
         Coord.cartesian(xmin = log10(40), xmax = log10(400)),
     )
-    p = (hstack(p1,p2))
+    p = (hstack(p1, p2))
     set_default_plot_size(20cm, 8cm)
     return p
 end

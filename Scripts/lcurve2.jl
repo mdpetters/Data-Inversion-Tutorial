@@ -33,7 +33,7 @@ function lcurvefig2()
     )
     dfxx = [df1; df2]
     colors = ["black", "darkred"]
-    label = map(x -> @sprintf("λ = %.2f", x), [0.01, 0.05, 0.1, λopt, 0.5, 1.0 ])
+    label = map(x -> @sprintf("λ = %.2f", x), [0.01, 0.05, 0.1, λopt, 0.5, 1.0])
     xlabels = log10.([1, 10, 100])
     ylabels = log10.([1, 10])
     gengrid(r) = [vcat(map(x -> x:x:9x, r)...); r[end] * 10]
@@ -45,11 +45,14 @@ function lcurvefig2()
         Guide.title("L-curve between λ = 0.01 and 1 "),
         Guide.xlabel("Residual norm ||𝐀*𝕟-𝕣||<sub>2</sub>"),
         Guide.ylabel("Solution norm ||𝐈*(𝕟-𝕟ᵢ)||<sub>2</sub>"),
-        Guide.xticks(ticks = log10.([gengrid([1]);30])),
+        Guide.xticks(ticks = log10.([gengrid([1]); 30])),
         Guide.yticks(ticks = log10.([gengrid([10]); 200])),
-        Theme(plot_padding = [0Gadfly.mm, 25Gadfly.mm, 5Gadfly.mm, 0Gadfly.mm], default_color = "black"),
+        Theme(
+            plot_padding = [0Gadfly.mm, 25Gadfly.mm, 5Gadfly.mm, 0Gadfly.mm],
+            default_color = "black",
+        ),
         Scale.x_log10(labels = x -> x in ylabels ? @sprintf("%.1f", exp10(x)) : ""),
-        Scale.y_log10(labels = x -> x in xlabels ? @sprintf("%i", exp10(x)) : "",),
+        Scale.y_log10(labels = x -> x in xlabels ? @sprintf("%i", exp10(x)) : ""),
         Coord.cartesian(
             xmin = log10(1),
             xmax = log10(30),

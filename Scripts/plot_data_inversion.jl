@@ -21,7 +21,9 @@ function getplotsinv(𝕣, 𝕟ⁱⁿᵛ¹, 𝕟ⁱⁿᵛ², 𝕟ⁱⁿᵛ³)
         Guide.ylabel("N (cm-3)"),
         Guide.title("Raw Response Function"),
         Guide.colorkey(; title = ""),
-        Guide.xticks(ticks = log10.([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500])),
+        Guide.xticks(
+            ticks = log10.([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500]),
+        ),
         Scale.x_log10(labels = x -> x in xlabels ? @sprintf("%2i", exp10(x)) : ""),
         Scale.color_discrete_manual("black"),
         Coord.cartesian(xmin = log10(10), xmax = log10(500), ymin = 0),
@@ -36,13 +38,15 @@ function getplotsinv(𝕣, 𝕟ⁱⁿᵛ¹, 𝕟ⁱⁿᵛ², 𝕟ⁱⁿᵛ³)
         Guide.xlabel("Particle diameter (nm)"),
         Guide.ylabel("dN/dlnD (cm-3)"),
         Guide.title("Inverted Size Distribution"),
-        Guide.xticks(ticks = log10.([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500])),
+        Guide.xticks(
+            ticks = log10.([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500]),
+        ),
         Guide.colorkey(; title = ""),
         Scale.x_log10(labels = x -> x in xlabels ? @sprintf("%2i", exp10(x)) : ""),
         Scale.color_discrete_manual(colors...),
         Coord.cartesian(xmin = log10(10), xmax = log10(500), ymin = 0),
     )
-    p = (hstack(p1,p2))
+    p = (hstack(p1, p2))
     set_default_plot_size(20cm, 8cm)
     return p
 end

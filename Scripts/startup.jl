@@ -23,11 +23,13 @@ IPyDisplay = pyimport("IPython.display")
 play(audiofile::AbstractString) = IPyDisplay.Audio(audiofile)
 
 display(url::AbstractString; res = :240) = @match res begin
-   :240 => IPyDisplay.YouTubeVideo((split(url, "="))[2], width = 426, height = 240)
-   :360 => IPyDisplay.YouTubeVideo((split(url, "="))[2], width = 640, height = 360)
-   :480 => IPyDisplay.YouTubeVideo((split(url, "="))[2], width = 824, height = 480) 
+    :240 => IPyDisplay.YouTubeVideo((split(url, "="))[2], width = 426, height = 240)
+    :360 => IPyDisplay.YouTubeVideo((split(url, "="))[2], width = 640, height = 360)
+    :480 => IPyDisplay.YouTubeVideo((split(url, "="))[2], width = 824, height = 480)
 end
 
 matrices = JLD2.jldopen("precomputed_matrices.jld", "r") do file
     read(file, "matrices")
 end
+
+BLAS.set_num_threads(1)

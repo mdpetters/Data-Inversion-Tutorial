@@ -8,7 +8,7 @@ function getplots1(𝕟₁, 𝕟₂, 𝕩)
 
     xlabels = log10.([40, 100, 400])
     colors = ["darkred", "steelblue3", "black"]
-        
+
     set_default_plot_size(16cm, 9cm)
     return plot(
         df,

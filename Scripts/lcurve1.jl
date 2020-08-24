@@ -36,7 +36,7 @@ function lcurvefig()
     label = map(x -> @sprintf("λ = %.2f", x), [0.01, 0.05, 0.1, λopt, 0.5, 1.0, 2.0])
     xlabels = log10.([1, 10, 100])
     ylabels = log10.([1, 10])
-	colors = ["black", "darkred"]
+    colors = ["black", "darkred"]
     gengrid(r) = [vcat(map(x -> x:x:9x, r)...); r[end] * 10]
     p1 = plot(
         x = L1,
@@ -48,9 +48,12 @@ function lcurvefig()
         Guide.ylabel("Solution norm ||𝐈*(𝕟-𝕟ᵢ)||<sub>2</sub>"),
         Guide.xticks(ticks = log10.(gengrid([1]))),
         Guide.yticks(ticks = log10.([gengrid([1, 10]); 200])),
-        Theme(plot_padding = [0Gadfly.mm, 25Gadfly.mm, 5Gadfly.mm, 0Gadfly.mm], default_color = "black"),
+        Theme(
+            plot_padding = [0Gadfly.mm, 25Gadfly.mm, 5Gadfly.mm, 0Gadfly.mm],
+            default_color = "black",
+        ),
         Scale.x_log10(labels = x -> x in ylabels ? @sprintf("%.1f", exp10(x)) : ""),
-        Scale.y_log10(labels = x -> x in xlabels ? @sprintf("%i", exp10(x)) : "",),
+        Scale.y_log10(labels = x -> x in xlabels ? @sprintf("%i", exp10(x)) : ""),
         Coord.cartesian(
             xmin = log10(1),
             xmax = log10(10),

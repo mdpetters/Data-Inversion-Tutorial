@@ -23,7 +23,9 @@ function getplotsccn(𝕣ᶜⁿ, 𝕣ᶜᶜⁿ, 𝕒𝕗)
         Guide.ylabel("Fraction (-)"),
         Guide.title("Activated Fraction"),
         Guide.colorkey(; title = ""),
-        Guide.xticks(ticks = log10.([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500])),
+        Guide.xticks(
+            ticks = log10.([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500]),
+        ),
         Guide.yticks(ticks = collect(0:0.2:1.2)),
         Scale.x_log10(labels = x -> x in xlabels ? @sprintf("%2i", exp10(x)) : ""),
         Scale.color_discrete_manual("black"),
@@ -39,13 +41,15 @@ function getplotsccn(𝕣ᶜⁿ, 𝕣ᶜᶜⁿ, 𝕒𝕗)
         Guide.xlabel("Apparent +1 Mobility Diameter (nm)"),
         Guide.ylabel("dN/dlnD (cm-3)"),
         Guide.title("Raw response function"),
-        Guide.xticks(ticks = log10.([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500])),
+        Guide.xticks(
+            ticks = log10.([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500]),
+        ),
         Guide.colorkey(; title = ""),
         Scale.x_log10(labels = x -> x in xlabels ? @sprintf("%2i", exp10(x)) : ""),
         Scale.color_discrete_manual(colors...),
         Coord.cartesian(xmin = log10(10), xmax = log10(500), ymin = 0),
     )
-    p = (hstack(p2,p1))
+    p = (hstack(p2, p1))
     set_default_plot_size(20cm, 8cm)
     return p
 end
