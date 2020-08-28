@@ -31,5 +31,3 @@ end
 matrices = JLD2.jldopen("precomputed_matrices.jld", "r") do file
     read(file, "matrices")
 end
-
-BLAS.set_num_threads(1)
