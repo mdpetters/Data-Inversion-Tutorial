@@ -13,7 +13,7 @@ function getpsd2()
     lpm = 16.666666 # 16.66 cm³ s⁻¹ = 1 L min⁻¹
     𝕣 = poisson_noise(1 * lpm, 𝐀 * 𝕟)
     eyeM = Matrix{Float64}(I, length(𝕣.N), length(𝕣.N))
-    setupRegularization(δ.𝐀, eyeM, 𝕣.N, [0.0 for i in 𝕣.N])
+    setupRegularization(δ.𝐀, eyeM, 𝕣.N, [0.0 for i in 𝕣.N], 1)
     𝕟, 𝕣
 end
 
