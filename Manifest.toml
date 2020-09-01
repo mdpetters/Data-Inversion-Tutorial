@@ -107,9 +107,9 @@ version = "0.3.0"
 
 [[Compat]]
 deps = ["Base64", "Dates", "DelimitedFiles", "Distributed", "InteractiveUtils", "LibGit2", "Libdl", "LinearAlgebra", "Markdown", "Mmap", "Pkg", "Printf", "REPL", "Random", "SHA", "Serialization", "SharedArrays", "Sockets", "SparseArrays", "Statistics", "Test", "UUIDs", "Unicode"]
-git-tree-sha1 = "083e7e5ec3ef443e9dcb6dd3fbcb815879823bfa"
+git-tree-sha1 = "215f1c81cfd1c5416cd78740bff8ef59b24cd7c0"
 uuid = "34da2185-b29b-5c13-b0c7-acf172513d20"
-version = "3.14.0"
+version = "3.15.0"
 
 [[CompilerSupportLibraries_jll]]
 deps = ["Libdl", "Pkg"]
@@ -201,8 +201,8 @@ uuid = "b552c78f-8df3-52c6-915a-8e097449b14b"
 version = "1.0.1"
 
 [[DifferentialMobilityAnalyzers]]
-deps = ["BenchmarkTools", "CSV", "Calculus", "DataFrames", "DataStructures", "Distributions", "Glob", "IJulia", "Interpolations", "LambertW", "LinearAlgebra", "LsqFit", "NetCDF", "Printf", "ProgressMeter", "Random", "SpecialFunctions", "StatsBase", "Test"]
-git-tree-sha1 = "32a028d6829b8f70f8d43060b67ba60714b01002"
+deps = ["BenchmarkTools", "CSV", "Calculus", "Colors", "DataFrames", "DataStructures", "Distributions", "Documenter", "FileIO", "Glob", "Interpolations", "JLD2", "LambertW", "LinearAlgebra", "LsqFit", "NetCDF", "NumericIO", "Printf", "ProgressMeter", "Random", "SpecialFunctions", "StatsBase", "Test"]
+git-tree-sha1 = "9835127942eec83fef09287e16feb6c2c2239b34"
 repo-rev = "master"
 repo-url = "https://github.com/mdpetters/DifferentialMobilityAnalyzers.jl.git"
 uuid = "050a7be8-18f9-52d6-bdba-0a194485d082"
@@ -234,6 +234,12 @@ deps = ["LibGit2", "Markdown", "Pkg", "Test"]
 git-tree-sha1 = "50ddf44c53698f5e784bbebb3f4b21c5807401b1"
 uuid = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
 version = "0.8.3"
+
+[[Documenter]]
+deps = ["Base64", "Dates", "DocStringExtensions", "InteractiveUtils", "JSON", "LibGit2", "Logging", "Markdown", "REPL", "Test", "Unicode"]
+git-tree-sha1 = "fb1ff838470573adc15c71ba79f8d31328f035da"
+uuid = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+version = "0.25.2"
 
 [[Expat_jll]]
 deps = ["Libdl", "Pkg"]
@@ -449,10 +455,10 @@ uuid = "82899510-4779-5014-852e-03e436cf321d"
 version = "1.0.0"
 
 [[JLD2]]
-deps = ["CodecZlib", "DataStructures", "FileIO", "Mmap", "Pkg", "Printf", "UUIDs"]
-git-tree-sha1 = "9353b717ee4e27beab4e902c92a06bb5f160d2cf"
+deps = ["CodecZlib", "DataStructures", "MacroTools", "Mmap", "Pkg", "Printf", "Requires", "UUIDs"]
+git-tree-sha1 = "d2c0db66530ff444846d6e84bcf948a74ce31635"
 uuid = "033835bb-8acc-5ee8-8aae-3f567f8a3819"
-version = "0.1.14"
+version = "0.2.0"
 
 [[JSExpr]]
 deps = ["JSON", "MacroTools", "Observables", "WebIO"]
@@ -645,9 +651,9 @@ uuid = "510215fc-4207-5dde-b226-833fc4488ee2"
 version = "0.3.1"
 
 [[OffsetArrays]]
-git-tree-sha1 = "2066e16af994955287f2e03ba1d9e890eb43b0dd"
+git-tree-sha1 = "b8500f9d73999cfbab4add5136ec26894081581e"
 uuid = "6fe1bfb0-de20-5000-8ca7-80f57d26f881"
-version = "1.1.2"
+version = "1.1.3"
 
 [[OpenSpecFun_jll]]
 deps = ["CompilerSupportLibraries_jll", "Libdl", "Pkg"]
@@ -783,9 +789,9 @@ version = "0.2.0"
 
 [[Requires]]
 deps = ["UUIDs"]
-git-tree-sha1 = "d37400976e98018ee840e0ca4f9d20baa231dc6b"
+git-tree-sha1 = "8c08d0c7812169e438a8478dae2a529377ad13f7"
 uuid = "ae029012-a4dd-5104-9daa-d747884805df"
-version = "1.0.1"
+version = "1.0.2"
 
 [[Rmath]]
 deps = ["Random", "Rmath_jll"]
@@ -804,9 +810,9 @@ uuid = "ea8e919c-243c-51af-8825-aaa63cd721ce"
 
 [[SentinelArrays]]
 deps = ["Dates", "Random"]
-git-tree-sha1 = "fa2d975d61cf5369e04ab83b96b0d169561df298"
+git-tree-sha1 = "dab4cbc8cfd7205838332ae95a45c02648b24a67"
 uuid = "91c51154-3ec4-41a3-a24f-3f23e20d615c"
-version = "1.2.13"
+version = "1.2.14"
 
 [[Serialization]]
 uuid = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
