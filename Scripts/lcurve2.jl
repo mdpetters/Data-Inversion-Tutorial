@@ -20,7 +20,9 @@ end
 function lcurvefig2()
     n1, r1 = getpsd2()
     λopt = lcorner(0.05, 1.0; n = 10, r = 3)
-    L1, L2, λs, ii = lcurve(0.01, 1.0; n = 50)
+	λs = 10.0 .^ range(log10(0.01), stop = log10(2.0), length = 50)
+	Li1 = L1.(λs)
+	Li2 = L2.(λs)
     mL1, mL2 = reginv([0.01, 0.05, 0.1, λopt, 0.5, 1.0]; r = :L1L2)
     psd = clean((reginv(λopt, r = :Nλ))[1])
 
@@ -38,8 +40,8 @@ function lcurvefig2()
     ylabels = log10.([1, 10])
     gengrid(r) = [vcat(map(x -> x:x:9x, r)...); r[end] * 10]
     p1 = plot(
-        x = L1,
-        y = L2,
+        x = Li1,
+        y = Li2,
         Geom.line,
         layer(x = mL1, y = mL2, label = label, Geom.point, Geom.label),
         Guide.title("L-curve between λ = 0.01 and 1 "),
